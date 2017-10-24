@@ -8,13 +8,14 @@ CREATE TABLE aluno(
 	email VARCHAR(45) PRIMARY KEY,
 	ativo BOOLEAN DEFAULT true,
 	nome VARCHAR(60) NOT NULL,
-	hash_senha CHAR(23) NOT NULL
+	hash_senha CHAR(23) NOT NULL,
+	membro_dacc BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE professor(
 	email VARCHAR(45) PRIMARY KEY,
 	ativo BOOLEAN DEFAULT false,
-	nome VARCHAR(60) NOT NULL,
+	id BIGSERIAL NOT NULL REFERENCES professores(id) UNIQUE,
 	hash_senha CHAR(23) NOT NULL
 );
 
