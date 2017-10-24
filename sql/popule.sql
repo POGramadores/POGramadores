@@ -1,3 +1,6 @@
+DROP TYPE IF EXISTS tipo_mensagem;
+DROP TYPE IF EXISTS assunto;
+
 CREATE TYPE tipo_mensagem AS ENUM ('ELOGIO','CRITICA','SUGESTAO','DUVIDAS');
 CREATE TYPE assunto AS ENUM ('PROFESSOR', 'INSTITUTO', 'DISCIPLINA');
 
@@ -20,17 +23,24 @@ CREATE TABLE professores(
 	nome VARCHAR(60) NOT NULL
 );
 
-CREATE TABLE mensagem(
+CREATE TABLE conversa(
 	id BIGSERIAL PRIMARY KEY,
+	data_inicio TIMESTAMP WITH TIME ZONE NOT NULL,
+	aluno VARCHAR(45) REFERENCES aluno(email),
 	tipo TIPO_MENSAGEM NOT NULL,
 	assunto ASSUNTO NOT NULL,
 	professor BIGSERIAL REFERENCES professores(id),
 	coordenacao_acesso BOOLEAN NOT NULL,
 	diretorio_academico_acesso BOOLEAN NOT NULL,
-	corpo VARCHAR(5000) NOT NULL,
 	titulo VARCHAR(50) NOT NULL
-);
+)
 
+CREATE TABLE mensagem(
+	data_postagem timestamp with time zone NOT NULL,
+	id BIGSERIAL PRIMARY KEY,
+	corpo VARCHAR(5000) NOT NULL,
+	conversa BIGSERIAL REFERENCES conversa(id)
+);
 
 CREATE TABLE envia(
 	aluno VARCHAR(45) REFERENCES aluno(email),
