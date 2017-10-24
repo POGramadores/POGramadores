@@ -56,7 +56,7 @@ CREATE TABLE sudo_coordenacao(
 
 CREATE TABLE coordenacao(
 	id SERIAL PRIMARY KEY,
-	login VARCHAR(30),
+	email VARCHAR(30),
 	hash_senha CHAR(23)
 );
 
@@ -69,7 +69,7 @@ CREATE TABLE sudo_dacc(
 
 CREATE TABLE dacc(
 	id BIGSERIAL PRIMARY KEY,
-	login VARCHAR(30),
+	email VARCHAR(45),
 	hash_senha CHAR(23)
 );
 
