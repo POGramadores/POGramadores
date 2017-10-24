@@ -1,3 +1,6 @@
+CREATE DATABASE agoravai;
+\c agoravai;
+
 DROP TYPE IF EXISTS tipo_mensagem;
 DROP TYPE IF EXISTS assunto;
 
@@ -12,6 +15,11 @@ CREATE TABLE aluno(
 	membro_dacc BOOLEAN NOT NULL DEFAULT false
 );
 
+CREATE TABLE professores(
+	id BIGSERIAL PRIMARY KEY,
+	nome VARCHAR(60) NOT NULL
+);
+
 CREATE TABLE professor(
 	email VARCHAR(45) PRIMARY KEY,
 	ativo BOOLEAN DEFAULT false,
@@ -19,10 +27,6 @@ CREATE TABLE professor(
 	hash_senha CHAR(23) NOT NULL
 );
 
-CREATE TABLE professores(
-	id BIGSERIAL PRIMARY KEY,
-	nome VARCHAR(60) NOT NULL
-);
 
 CREATE TABLE conversa(
 	id BIGSERIAL PRIMARY KEY,
@@ -34,7 +38,7 @@ CREATE TABLE conversa(
 	coordenacao_acesso BOOLEAN NOT NULL,
 	diretorio_academico_acesso BOOLEAN NOT NULL,
 	titulo VARCHAR(50) NOT NULL
-)
+);
 
 CREATE TABLE mensagem(
 	data_postagem timestamp with time zone NOT NULL,
