@@ -7,3 +7,34 @@
 .topo {
     margin:auto;
 }
+
+.centra {
+    display:flex;
+    height:80vh;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    margin:auto;
+}
+
+.centracont {
+    justify-content:center; 
+}
+
+.canto {
+    position:absolute;
+    top:8px;
+    right:8px;
+}
+
+.logininput {
+    text-align:center;
+}
+
+.fundo {
+    background-color:#f5f5f5;
+}
+
+.botaoverde {
+    background-color:#ffa519;
+}

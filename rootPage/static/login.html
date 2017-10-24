@@ -1,14 +1,40 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <link rel="stylesheet" 
+          type="text/css" 
+          href="bootstrap.css"/>
+    <link rel="stylesheet" 
+          type="text/css" 
+          href="styles.css"/>
     <title>Login</title>
 </head>
-<body>
-    <form action="/login">
-        Login: <input type="text" name="nome"><br>
-        Senha: <input type="password" name="senha"><br><br>
-        <input type="submit" value="logar">
-    </form>
+<body class="fundo">
+    <div class="my-auto align-center container d-flex centracont">
+        <div class="row">
+            <div class="d-flex text-center centra">
+                <img src="assets/logoicon.png" height=180px/><br>
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control logininput col-xs-6" name="nome" placeholder="login">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control logininput col-xs-6" name="senha" placeholder="senha">
+                    </div>
+                        <input type="submit" class="btn botaoverde" value="Entrar">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="canto">
+        <form method="get" action="cadastro.html">
+            <button class="btn botaoverde float-right canto" type=submit>Criar conta</button>
+        </form>
+    </div>
+
 </body>
 </html>
