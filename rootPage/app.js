@@ -31,8 +31,10 @@ var discriminacaoAcesso = function(req,res,next){
 
 
 var estaNaTabela = (tabelas,substituicao,res) =>{
-	if (tabelas.length==0) return (err) => {};
+	console.log('tabela atual');
+	if (tabelas.length==0) return (err) => {res.status(400); res.end();};
 	return (err) => {
+		console.log('cheguei aqui');
 		const select = "select email,hash_senha from "+tabelas[0]+"  where email='"+substituicao[0]+"' and hash_senha='"+substituicao[1]+"' ;";
 		console.log(select);
 		connection.query(select,
@@ -46,7 +48,8 @@ var estaNaTabela = (tabelas,substituicao,res) =>{
 
 				}
 				else{
-					estaNaTabela(tabelas.slice(1),substituicao,res);
+					console.log('proxima tabela');
+					connection.connect(estaNaTabela(tabelas.slice(1),substituicao,res));
 				}
 			});
 	}
