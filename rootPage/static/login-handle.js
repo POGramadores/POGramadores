@@ -16,7 +16,7 @@ function tentarLogin(){
                             URL = "membro-dacc-principal.html";
                         }
                     }else{
-                        global.auths = auths;
+                        $bataters_auths = auths;
                         URL = "desambiguacao.html";
                     }
                     window.location.href = URL;
@@ -50,7 +50,7 @@ function enviarCadastro(){
 }
 
 function desambigua(tipo){
-    var auths = global.auths;
+    var auths = $bataters_auths;
     var auth_selecionado = auths[tipo];
     var URL;
     document.cookie = "auth=" + auth_selecionado;
