@@ -87,8 +87,8 @@ function mostrarBotoes(){
                 getParameterByName("auths")));
     auths.forEach(
         function(auth){
-            console.log(auth, mapeamento.auth);
-            $("#" + mapeamento.auth).show(200);
+            console.log(auth, mapeamento[auth]);
+            $("#" + mapeamento[auth]).show(200);
         }
     );
 }
