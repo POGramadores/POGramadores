@@ -54,14 +54,23 @@ function desambigua(tipo){
     var auth_selecionado = auths[tipo];
     var URL;
     document.cookie = "auth=" + auth_selecionado;
-    if(auth_selecionado == "aluno"){
+    if(tipo == "aluno"){
         URL = "aluno-principal.html";
-    }else if(auth_selecionado == "professor"){
+    }else if(tipo == "professor"){
         URL = "professor-principal.html";
-    }else if(auth_selecionado == "coordenador"){
+    }else if(tipo == "coordenador"){
         URL = "coordenador-principal.html";
-    }else if(auth_selecionado == "membro-dacc"){
+    }else if(tipo == "membro-dacc"){
         URL = "membro-dacc-principal.html";
     }
     window.location.href = URL;
+}
+
+function mostrarBotoes(){
+    var auths = global.auths;
+    Object.keys($("form")).forEach(
+        function(auth){
+            $("#" + auth).visibility = visible;
+        }
+    );
 }
