@@ -43,7 +43,7 @@ var estaNaTabela = (tabelas,substituicao,res) =>{
 				if(!(err || result.rowCount == 0)){
 					res.contentType('text/json');
 					res.send({auth:jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
-					                                                        'secret')});
+					                                                        'secret'),tabela:tabelas[0]});
 					res.end();
 
 				}
