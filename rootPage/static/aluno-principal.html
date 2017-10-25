@@ -10,19 +10,33 @@
     <link rel="stylesheet" 
           type="text/css" 
           href="styles.css"/>
-    <title>[nome aqui]</title>
+    <title>UFFeedback</title>
 </head>
-<body>
+<body class="fundo">
+<div class="topbar-bg">
+    <div class="topbar container" id="topo">
+        <div class="tbelement">
+            <img src="assets/logoicon.png" height=48px width=48px/>
+        </div>
+        <div class="topbar-direita">
+            <div class="saudacao">
+                Olá, Sagiri Izumi
+            </div>
+            <div class="tbelement">
+                <img src="assets/gear.png" height=32px width=32px/>
+            </div>
+        </div>        
+    </div>
+</div>
 <div class="container">
-    <div class="row d-flex w-100 justify-content-space-between align-center" id="topo">
-        <img src="assets/logoicon.png" height=64px/>
-        <div>
-            <div>
-                Olá, Sagiri
-            </div>
-            <div>
-                <img src="gear.png" height=48px/>
-            </div>
+    <div class="container conteudo">
+        <form method="get" action="escrever-mensagem.html">
+            <button class="btn botao-escrever" type="submit">Escrever</button>
+        </form>
+    </div>
+    <div class="listagem">
+        <div class="elemento-listagem">
+            
         </div>
     </div>
 </div>
