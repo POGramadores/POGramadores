@@ -7,6 +7,7 @@ function tentarLogin(){
                function(data, status){
                     console.log(data, status);
                     if(status == "success"){
+                        console.log("ACHO QUE FOI!");
                         var resultadoObj = JSON.parse(data);
                         if(resultadoObj.tabela == "aluno"){
                             URL = "aluno-principal.html";
@@ -17,13 +18,13 @@ function tentarLogin(){
                         }
                         window.location.href = URL;
                     }else{
+                        alert("DEL RUIM");
                         $("#erro-senha").slideDown(250);
                         setTimeout(function () {
                             $("#erro-senha").slideUp(500);
                         }, 5000);
                     }
-               }
-               );
+               }, "json");
         return false;
         //alert("ESSA MERDA NUM FUNFA!!!! CONSERTA AI");
         /*var form = document.forms["login"];
