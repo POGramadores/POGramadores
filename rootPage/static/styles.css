@@ -1,3 +1,7 @@
+body {
+    color:#404041;
+}
+
 .titulo {
     position:absolute;
     top:0;
@@ -30,7 +34,6 @@
 .cadastroinput {
     text-align:center;
     width:600px;
-    
 }
 
 .btn {
@@ -44,8 +47,11 @@
 }
 
 .topbar-bg {
-    background-color:#e4e4e4;
-    margin-bottom:16px
+    background-color:#f5f5f5;
+    margin-bottom:16px;
+    border-style:solid;
+    border-width:0 0 2px 0;
+    border-color:#e8e8e8;
 }
 
 .topbar {
@@ -92,10 +98,70 @@
 }
 
 .elemento-listagem {
-    margin-top:2px
+    position:relative;
+    margin-top:2px;
+    background-color:#fff;
+    border-style:solid;
+    border-width:0 0 0 22px;
+    border-color:#ececec;
+    width:90%;
+    padding-right:32px;
+    padding-bottom:44px;
+    padding-left:11px;
+}
+
+.elemento-listagem:hover {
+    background-color:#fffee8;
+    border-color:#ecebd4;
+}
+
+.elemento-lido {
+    background-color:#eeffe8;
+    border-color:#ccffb8 !important;
+}
+
+.elemento-lido:hover {
+    background-color:#e4ffd8;
+    border-color:#c2ffa8 !important;
+}
+
+.titulo-lido {
+    font-weight:bold;
+}
+
+.conteudo-lido {
+    color:#304030 !important;
 }
 
 .titulo-listagem {
     position:absolute;
-    left:
+    left:27px;
+    top:8px;
+    width:100%;
+}
+
+.data-listagem {
+    position:absolute;
+    right:24px;
+    top:8px;
+    font-weight:bold
+}
+
+.icone-status-listagem {
+    position:absolute;
+    left:-32px;
+    top:21px;
+}
+
+.conteudo-listagem {
+    position:relative;
+    left:16px;
+    top:34px;
+    color:#a0a0a0;
+    font-style:italic;
+    font-size:11pt;
+    width:98%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
