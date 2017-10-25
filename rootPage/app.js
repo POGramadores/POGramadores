@@ -30,11 +30,26 @@ var discriminacaoAcesso = function(req,res,next){
 }
 
 var trataFormulario = function(req,res) {
-	var bodyUsuario=req.body.usuario, bodySenha=req.body.senha;
-
-	connection.connect(err => {connection.query('select * from ', (err,result) => {console.log(result.rows); res.end();} )} )
-/*
-	var tokenAutenticacao = jwt.sign({usuario:bodyUsuario, senha:bodySenha}, 'secret'); */
+	var bodyUsuario = req.body.usuario, 
+	    bodySenha = req.body.senha;
+	connection.connect(err => {
+		connection.query('select email,hash_senha from aluno where email=$1 and hash_senha=$2',
+		                 [bodyUsuario, bodySenha], 
+		                 (err, result) => 
+			{
+			if(err || result.rowCount == 0) {
+				res.status(400);
+				res.end();
+				return;
+			} 
+			console.log(result);
+			res.contentType('text/json');
+			res.send({auth:jwt.sign({usuario:bodyUsuario, 
+			                         senha:bodySenha, 
+			                         tabela:'aluno'}, 
+			          'secret')})
+		} )
+	} );
 }
 
 app.use(express.json());
