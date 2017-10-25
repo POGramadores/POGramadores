@@ -6,24 +6,25 @@ function tentarLogin(){
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
                     console.log(data, status);
-                    if(status == "success"){
-                        console.log("ACHO QUE FOI!");
-                        var resultadoObj = JSON.parse(data);
-                        if(resultadoObj.tabela == "aluno"){
-                            URL = "aluno-principal.html";
-                        }else if(resultadoObj.tabela == "professor"){
-                            URL = "professor-principal.html";
-                        }else if(resultadoObj.tabela == "coordenador"){
-                            URL = "coordenador-principal.html";
-                        }
-                        window.location.href = URL;
-                    }else{
-                        alert("DEL RUIM");
+                    console.log("ACHO QUE FOI!");
+                    var resultadoObj = JSON.parse(data);
+                    if(resultadoObj.tabela == "aluno"){
+                        URL = "aluno-principal.html";
+                    }else if(resultadoObj.tabela == "professor"){
+                        URL = "professor-principal.html";
+                    }else if(resultadoObj.tabela == "coordenador"){
+                        URL = "coordenador-principal.html";
+                    }
+                    window.location.href = URL;
+               }).fail(function(jqobj, status, error){
+                    console.log("DEL RUIM");
+                    if(jqobj.statusCode == 400){
                         $("#erro-senha").slideDown(250);
                         setTimeout(function () {
                             $("#erro-senha").slideUp(500);
                         }, 5000);
                     }
+                }
                }, "json");
         return false;
         //alert("ESSA MERDA NUM FUNFA!!!! CONSERTA AI");
