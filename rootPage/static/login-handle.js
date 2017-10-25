@@ -84,7 +84,7 @@ function mostrarBotoes(){
     var auths = JSON.parse(
                 $.base64.decode(
                 getParameterByName("auths")));
-    Object.keys($("form")).forEach(
+    auths.forEach(
         function(auth){
             console.log(auth)
             $("#" + auth).show(200);
