@@ -5,6 +5,7 @@ function tentarLogin(){
         console.log($("#login-form").serialize());
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
+                    console.log(data, status);
                     if(status == 200){
                         var resultadoObj = JSON.parse(data);
                         if(resultadoObj.tabela == "aluno"){
