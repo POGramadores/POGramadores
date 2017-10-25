@@ -41,9 +41,9 @@ var estaNaTabela = (tabelas,substituicao,res) =>{
 			(err, result) => {
 				console.log(result + ' ' + err);
 				if(!(err || result.rowCount == 0)){
-					res.contentType('text/json');
-					res.send({auth:jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
-					                                                        'secret'),tabela:tabelas[0]});
+					res.cookie("auth", jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
+						'secret'));
+					res.cookie("tabela", tabelas[0]);
 					res.end();
 
 				}
@@ -63,7 +63,14 @@ var trataFormulario = function(req,res) {
 	    bodySenha = req.body.senha;
 	var substituicao = [bodyUsuario,bodySenha];
 	var tabelas = ['aluno','professor','coordenacao','dacc'];
+	var email = /^[a-zA-Z_][.a-zA-Z0-9_]*@(id|ic|dcc)\.uff\.br$/;
+	if(!email.test(bodyUsuario)) {
+		res.status(400);
+		res.end();
+		return;
+	}
 	connection.connect(estaNaTabela(tabelas,substituicao,res));
+	console.log(req.url);
 }
 
 app.use(express.json());

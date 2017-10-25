@@ -47,3 +47,5 @@ function tentarLogin(){
         return false;
     }
 }
+
+$('#entrar').click(tentarLogin);

@@ -10,8 +10,7 @@
     <link rel="stylesheet" 
           type="text/css" 
           href="styles.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Login</title>
 </head>
 <body class="fundo">
@@ -30,7 +29,7 @@
                     <div class="form-group">
                         <input type="password" class="form-control cadastroinput col-xs-6" name="senha" placeholder="senha">
                     </div>
-                        <button type="submit" class="btn btn-anim-light btn-anim-arrow"><span>Entrar</span></button>
+                        <button id="entrar" type="submit" class="btn btn-anim-light btn-anim-arrow">Entrar</button>
                 </form>
             </div>
         
@@ -41,6 +40,6 @@
             <button class="btn btn-anim-light float-right canto" type=submit>Criar conta</button>
         </form>
     </div>
-
+    <script src="login-handle.js"></script>
 </body>
 </html>
