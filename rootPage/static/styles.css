@@ -99,16 +99,26 @@
     background-color:#fff;
     border-style:solid;
     border-width:0 0 0 22px;
-    border-color:transparent;
+    border-color:#ececec;
     width:90%;
     padding-right:32px;
     padding-bottom:44px;
     padding-left:11px;
 }
 
+.elemento-listagem:hover {
+    background-color:#fffee8;
+    border-color:#ecebd4;
+}
+
 .elemento-lido {
     background-color:#eeffe8;
     border-color:#ccffb8 !important;
+}
+
+.elemento-lido:hover {
+    background-color:#e4ffd8;
+    border-color:#c2ffa8 !important;
 }
 
 .titulo-lido {
