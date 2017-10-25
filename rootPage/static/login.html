@@ -10,7 +10,7 @@
     <link rel="stylesheet" 
           type="text/css" 
           href="styles.css"/>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Login</title>
 </head>
 <body class="fundo">
@@ -22,7 +22,7 @@
                     Usuário ou senha incorretos.
                 </div>
                 <script src="login-handle.js"></script>
-                <form name="login" onsubmit="return tentarLogin()">
+                <form id="login-form" name="login" onsubmit="return tentarLogin()">
                     <div class="form-group">
                         <input type="text" class="form-control cadastroinput col-xs-6" name="usuario" placeholder="login">
                     </div>

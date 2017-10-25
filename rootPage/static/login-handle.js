@@ -2,9 +2,8 @@
 function tentarLogin(){
     try{
         alert("TÁ BUGADO O SCRIPT, OBRIGADU");
-        console.log("usuario=" + $("#usuario").value + "&senha=" + $("#senha").value);
-        $.post("/login",
-               "usuario=" + $("#usuario") + "&senha=" + $("#senha"),
+        console.log($("#login-form").serialize());
+        $.post($("#login-form").serialize(),
                function(data, status){
                     if(status == 200){
                         var resultadoObj = JSON.parse(data);
