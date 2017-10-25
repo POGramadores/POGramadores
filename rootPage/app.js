@@ -75,12 +75,23 @@ var trataFormulario = function(req,res) {
 var cadastre = function(req,res){
 }
 
+
+var mensagem = function(req,res){
+	var auth = req.body.auth;
+	if(Object.keys(auth).length !== 1){
+		res.redirect('/login.html');
+	}
+}
+
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.post('/login', trataFormulario);
 app.put('/cadastro', cadastre);
+app.get('/mensagem', mensagem);
 app.use(discriminacaoAcesso);
 
 
