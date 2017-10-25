@@ -264,3 +264,7 @@ body {
     margin-bottom:12px;
 }
 
+.tipo {
+    #visibility: hidden;
+    margin-top: 20px;
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" 
+          type="text/css" 
+          href="bootstrap.css"/>
+    <link rel="stylesheet" 
+          type="text/css" 
+          href="styles.css"/>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>Login</title>
+</head>
+<body class="fundo">
+    <div class="my-auto align-center container d-flex centracont">
+        
+            <div class="d-flex text-center centra">
+                <img src="assets/logoicon.png" class="logo-afasta" height=180px/>
+                <div class="erro-box" id="erro-senha">
+                    Usuário ou senha incorretos.
+                </div>
+                <button id="aluno" onclick="desambigua(this.id)" class="btn btn-anim-light tipo">Aluno</button>
+                <button id="membro_dacc" onclick="desambigua(this.id)" class="btn btn-anim-light tipo">Membro DA</button>
+                <button id="professor" onclick="desambigua(this.id)" class="btn btn-anim-light tipo">Professor</button>
+                <button id="coordenacao" onclick="desambigua(this.id)" class="btn btn-anim-light tipo">Coordenação</button>
+            </div>
+        
+    </div>
+    
+    <div class="canto">
+        <form method="get" action="cadastro.html">
+            <button class="btn btn-anim-light float-right canto" type=submit>Criar conta</button>
+        </form>
+    </div>
+    <script src="login-handle.js"></script>
+</body>
+</html>
