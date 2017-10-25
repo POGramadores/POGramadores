@@ -17,7 +17,7 @@ function tentarLogin(){
                         }
                     }else{
                         var authjson = encodeURIComponent(
-                                       btoa(
+                                       $.base64.encode(
                                        JSON.stringify(auths)));
                         URL = "desambiguacao.html?auths=" + authjson;
                     }
@@ -63,7 +63,7 @@ function getParameterByName(name, url) {
 
 function desambigua(tipo){
     var auths = JSON.parse(
-                atob(
+                $.base64.decode(
                 getParameterByName("auths")));
     var auth_selecionado = auths[tipo];
     var URL;
@@ -82,7 +82,7 @@ function desambigua(tipo){
 
 function mostrarBotoes(){
     var auths = JSON.parse(
-                btoa(
+                $.base64.decode(
                 getParameterByName("auths")));
     Object.keys($("form")).forEach(
         function(auth){
