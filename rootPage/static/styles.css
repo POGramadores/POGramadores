@@ -12,6 +12,10 @@ body {
     margin:auto;
 }
 
+.logo-afasta {
+    margin-bottom:24px;
+}
+
 .centra {
     display:flex;
     height:80vh;
@@ -121,6 +125,18 @@ body {
     margin-right:48px;
 }
 
+.outliner {
+    display:flex;
+    flex-direction:column;
+}
+
+.categoria-outliner {
+    margin-bottom:2px;
+    padding:8px;
+    width:90%;
+    background-color:#ffffff;
+}
+
 .botao-escrever {
     margin-top:16px;
     margin-bottom:16px;
@@ -138,6 +154,10 @@ body {
 .listagem {
     display:flex;
     flex-direction:column;
+}
+
+.listagem-na-divisoria {
+    flex-grow:2;
 }
 
 .elemento-listagem {
@@ -180,7 +200,10 @@ body {
     position:absolute;
     left:27px;
     top:8px;
-    width:100%;
+    width:65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .data-listagem {
