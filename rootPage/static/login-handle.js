@@ -22,24 +22,19 @@ function tentarLogin(){
                 },
                "json");
         return false;
-        //alert("ESSA MERDA NUM FUNFA!!!! CONSERTA AI");
-        /*var form = document.forms["login"];
-        var login = form["usuario"];
-        var senha = form["senha"];
-        var metodo = "POST";
-        var URL = "/login";
-        var dados = "usuario=" + login + "&senha=" + senha;
-        var request = new XMLHttpRequest();
-        request.onload = function () {
-            var status = request.status;
-            var resultado = request.responseText;
-            alert(status);
-            
-        };*/
-        /*
-        request.open(method, URL);
-        request.send(dados);
-        */
+    }catch(err){
+        console.log(err);
+        return false;
+    }
+}
+
+function enviarCadastro(){
+    try{
+        $.put("/cadastro", 
+              $("#cadastro-form").serialize(),
+              function(){
+                    window.location.href = "login.html";
+              })
     }catch(err){
         console.log(err);
         return false;
