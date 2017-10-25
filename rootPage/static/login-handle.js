@@ -3,6 +3,7 @@ function tentarLogin(){
     try{
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
+                    console.log(data);
                     var auths = Object.keys(JSON.parse(data))
                     if(auths.length == 1){
                         var resultadoObj;
