@@ -4,7 +4,7 @@ function tentarLogin(){
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
                     console.log(data);
-                    var auths = Object.keys(JSON.parse(data))
+                    var auths = Object.keys(data)
                     if(auths.length == 1){
                         var resultadoObj;
                         resultadoObj.tabela = auths[0];
