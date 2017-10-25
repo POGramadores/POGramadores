@@ -24,8 +24,8 @@ function tentarLogin(){
                             $("#erro-senha").slideUp(500);
                         }, 5000);
                     }
-                }
-               }, "json");
+                },
+               "json");
         return false;
         //alert("ESSA MERDA NUM FUNFA!!!! CONSERTA AI");
         /*var form = document.forms["login"];
