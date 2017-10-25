@@ -1,4 +1,6 @@
+
 function tentarLogin(){
+    alert("ESSA MERDA NUM FUNFA!!!! CONSERTA AI");
     var form = document.forms["login"];
     var login = form["usuario"];
     var senha = form["senha"];
