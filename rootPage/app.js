@@ -29,27 +29,38 @@ var discriminacaoAcesso = function(req,res,next){
 	}
 }
 
+
+var estaNaTabela = (tabelas,substituicao,res) =>{
+	if (tabelas.length==0) return (err) => {};
+	return (err) => {
+		const select = "select email,hash_senha from "+tabelas[0]+"  where email='"+substituicao[0]+"' and hash_senha='"+substituicao[1]+"' ;";
+		console.log(select);
+		connection.query(select,
+			(err, result) => {
+				console.log(result + ' ' + err);
+				if(!(err || result.rowCount == 0)){
+					res.contentType('text/json');
+					res.send({auth:jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
+					                                                        'secret')});
+					res.end();
+
+				}
+				else{
+					estaNaTabela(tabelas.slice(1),substituicao,res);
+				}
+			});
+	}
+
+}
+
+
+
 var trataFormulario = function(req,res) {
 	var bodyUsuario = req.body.usuario, 
 	    bodySenha = req.body.senha;
-	connection.connect(err => {
-		connection.query('select email,hash_senha from aluno where email=$1 and hash_senha=$2',
-		                 [bodyUsuario, bodySenha], 
-		                 (err, result) => 
-			{
-			if(err || result.rowCount == 0) {
-				res.status(400);
-				res.end();
-				return;
-			} 
-			console.log(result);
-			res.contentType('text/json');
-			res.send({auth:jwt.sign({usuario:bodyUsuario, 
-			                         senha:bodySenha, 
-			                         tabela:'aluno'}, 
-			          'secret')})
-		} )
-	} );
+	var substituicao = [bodyUsuario,bodySenha];
+	var tabelas = ['aluno','professor','coordenacao','dacc'];
+	connection.connect(estaNaTabela(tabelas,substituicao,res));
 }
 
 app.use(express.json());
