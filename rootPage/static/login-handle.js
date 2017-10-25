@@ -2,6 +2,7 @@
 function tentarLogin(){
     try{
         alert("TÁ BUGADO O SCRIPT, OBRIGADU");
+        console.log("usuario=" + $("#usuario").value + "&senha=" + $("#senha").value);
         $.post("/login",
                "usuario=" + $("#usuario").value + "&senha=" + $("#senha").value,
                function(data, status){
