@@ -17,8 +17,8 @@ function tentarLogin(){
                         }
                     }else{
                         var authjson = encodeURIComponent(
-                                       JSON.stringify(auths)
-                                       .toString("base64"));
+                                       atob(
+                                       JSON.stringify(auths)));
                         URL = "desambiguacao.html?auths=" + authjson;
                     }
                     window.location.href = URL;
