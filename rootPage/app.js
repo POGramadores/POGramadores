@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const secret = 'secret';
 const Pool = require('pg-pool');
+const cookieParser = require('cookie-parser');
+
 
 const app = express();
 
@@ -75,16 +77,54 @@ var trataFormulario = function(req,res) {
 var cadastre = function(req,res){
 }
 
+var limpa = function(auth){
+	aux={};
+	for (var k in auth){
+		if(k!='iat') aux[k]=auth[k]
+	}
+	return aux;
+}
 
 var mensagem = function(req,res){
-	var auth = req.body.auth;
-	if(Object.keys(auth).length !== 1){
+	var auth = req.cookies['auth'];
+	console.log(auth);
+	if(typeof (auth) === 'undefined')
+	{
 		res.redirect('/login.html');
+		return;
+	}
+	if(Object.keys(auth).length !== 1){
+		res.redirect('/desambiguacao.html');
+	}
+	else{
+		var count = req.body.count;
+		var offset = req.body.offset;
+		var auth = jwt.verify(auth,'secret');
+		auth=limpa(auth);
+		connection.connect( err => {
+			const select = "select * from conversa NATURAL JOIN aluno where nome='"  + auth['usuario']+
+				"' order by data_inicio limit " + count + " offset " + offset;
+
+				
+		  
+		
+		
+		
+		connection.query(select,
+			(err, result) => {
+				if(!err){
+					res.send(JSON.stringify(result));
+					res.end();
+				}
+				res.end();
+			});
+	});
+
 	}
 }
 
 
-
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
