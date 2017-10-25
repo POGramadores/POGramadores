@@ -40,6 +40,7 @@ function tentarLogin(){
         return false;
     }
 }
+//oi
 
 function enviarCadastro(){
     try{
