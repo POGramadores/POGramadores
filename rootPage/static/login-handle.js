@@ -76,7 +76,7 @@ function desambigua(tipo){
         URL = "aluno-principal.html";
     }else if(tipo == "professor"){
         URL = "professor-principal.html";
-    }else if(tipo == "coordenador"){
+    }else if(tipo == "coordenacao"){
         URL = "coordenador-principal.html";
     }else if(tipo == "membro_dacc"){
         URL = "diretorio-principal.html";
