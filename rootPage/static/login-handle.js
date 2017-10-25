@@ -17,7 +17,7 @@ function tentarLogin(){
                         }
                     }else{
                         var authjson = encodeURIComponent(
-                                       atob(
+                                       btoa(
                                        JSON.stringify(auths)));
                         URL = "desambiguacao.html?auths=" + authjson;
                     }
@@ -63,7 +63,7 @@ function getParameterByName(name, url) {
 
 function desambigua(tipo){
     var auths = JSON.parse(
-                btoa(
+                atob(
                 getParameterByName("auths")));
     var auth_selecionado = auths[tipo];
     var URL;
