@@ -76,7 +76,7 @@ function desambigua(tipo){
         URL = "aluno-principal.html";
     }else if(tipo == "professor"){
         URL = "professor-principal.html";
-    }else if(tipo == "coordenador"){
+    }else if(tipo == "coordenacao"){
         URL = "coordenador-principal.html";
     }else if(tipo == "membro_dacc"){
         URL = "diretorio-principal.html";
@@ -85,7 +85,7 @@ function desambigua(tipo){
 }
 
 function mostrarBotoes(){
-    var mapeamento = {"aluno":"aluno", "dacc":"membro_dacc", "coordenacao":"coordenador", "professor":"professor"};
+    var mapeamento = {"aluno":"aluno", "dacc":"membro_dacc", "coordenacao":"coordenacao", "professor":"professor"};
     var auths = JSON.parse(
                 $.base64.decode(
                 getParameterByName("auths")));
