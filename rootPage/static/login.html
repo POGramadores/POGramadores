@@ -10,6 +10,7 @@
     <link rel="stylesheet" 
           type="text/css" 
           href="styles.css"/>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <title>Login</title>
 </head>
 <body class="fundo">
@@ -17,15 +18,14 @@
         
             <div class="d-flex text-center centra">
                 <img src="assets/logoicon.png" class="logo-afasta" height=180px/>
-                <script src="login-handle.js"></script>
-                <form name="login" onsubmit="tentarLogin()">
+                <form name="login" method="POST" action="/login">
                     <div class="form-group">
                         <input type="text" class="form-control cadastroinput col-xs-6" name="usuario" placeholder="login">
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control cadastroinput col-xs-6" name="senha" placeholder="senha">
                     </div>
-                        <button type="submit" class="btn btn-anim-light btn-anim-arrow"><span>Entrar</span></button>
+                        <button id="entrar" type="submit" class="btn btn-anim-light btn-anim-arrow">Entrar</button>
                 </form>
             </div>
         
@@ -36,6 +36,6 @@
             <button class="btn btn-anim-light float-right canto" type=submit>Criar conta</button>
         </form>
     </div>
-
+    <script src="login-handle.js"></script>
 </body>
 </html>

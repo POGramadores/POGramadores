@@ -1,35 +1,22 @@
 
-function tentarLogin(){
-    alert("ESSA MERDA NUM FUNFA!!!! CONSERTA AI");
-    var form = document.forms["login"];
-    var login = form["usuario"];
-    var senha = form["senha"];
-    var metodo = "POST";
-    var URL = "/login";
-    var dados = "usuario=" + login + "&senha=" + senha;
-    var async = false;
-    var request = new XMLHttpRequest();
-    request.onload = function () {
-        var status = request.status;
-        var resultado = request.responseText;
-    }
-    
-    request.open(method, URL, async);
-    request.send(dados);
-    alert(status);
-    if(status == 200){
-        var resultadoObj = JSON.parse(resultado);
-        request = new XMLHttpRequest;
-        metodo = "GET";
-        request.setRequestHeader("Authorization", resultadoObj.auth);
-        if(resultadoObj.tabela == "aluno"){
-            URL = "aluno-principal.html";
-        }else if(resultadoObj.tabela == "professor"){
-            URL = "professor-principal.html";
-        }else if(resultadoObj.tabela == "coordenador"){
-            URL = "coordenador-principal.html";
-        }
-        request.open(method, URL, async);
-        alert("Resultado: " + status + "\nDados:" + resultado);
-    }
+function tentarLogin(e){
+	alert('cheguei aqui');
+	e.preventDefault();
+	var a = function (data) {
+		alert(data);
+	}
+	var f = function (err) {
+		alert('deu merda!!!');
+	}
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:8080/login",
+		data: {usuario:"a",senha:"c"},
+		sucess: a,
+		fail: f,
+		dataType: "text/json"
+	});
+	return true;
 }
+
+$('#entrar').click(tentarLogin);

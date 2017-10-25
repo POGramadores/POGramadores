@@ -64,6 +64,7 @@ var trataFormulario = function(req,res) {
 	var substituicao = [bodyUsuario,bodySenha];
 	var tabelas = ['aluno','professor','coordenacao','dacc'];
 	connection.connect(estaNaTabela(tabelas,substituicao,res));
+	console.log(req.url);
 }
 
 app.use(express.json());
