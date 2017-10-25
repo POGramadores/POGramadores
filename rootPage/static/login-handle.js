@@ -86,7 +86,7 @@ function mostrarBotoes(){
                 getParameterByName("auths")));
     Object.keys($("form")).forEach(
         function(auth){
-            $("#" + auth).display = "inline";
+            $("#" + auth).show(200);
         }
     );
 }
