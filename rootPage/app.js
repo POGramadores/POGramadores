@@ -43,7 +43,7 @@ var estaNaTabela = (tabelas,substituicao,res) =>{
 				if(!(err || result.rowCount == 0)){
 					res.cookie("auth", jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
 						'secret'));
-					res.cookie("tabela", tabelas[0]);
+					res.send({"tabela": tabelas[0]});
 					res.end();
 
 				}
@@ -66,6 +66,8 @@ var trataFormulario = function(req,res) {
 	var email = /^[a-zA-Z_][.a-zA-Z0-9_]*@(id|ic|dcc)\.uff\.br$/;
 	if(!email.test(bodyUsuario)) {
 		res.status(400);
+		res.header({"Content-type": "text/json"});
+		res.send("{}");
 		res.end();
 		return;
 	}

@@ -1,13 +1,9 @@
 
 function tentarLogin(){
     try{
-        alert("TÁ BUGADO O SCRIPT, OBRIGADU");
-        console.log($("#login-form").serialize());
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
-                    console.log(data, status);
-                    console.log("ACHO QUE FOI!");
-                    var resultadoObj = JSON.parse(data);
+                    var resultadoObj = data;
                     if(resultadoObj.tabela == "aluno"){
                         URL = "aluno-principal.html";
                     }else if(resultadoObj.tabela == "professor"){
@@ -17,7 +13,6 @@ function tentarLogin(){
                     }
                     window.location.href = URL;
                }).fail(function(jqobj, status, error){
-                    console.log("DEL RUIM", jqobj.status);
                     if(jqobj.status == 400){
                         $("#erro-senha").slideDown(250);
                         setTimeout(function () {
