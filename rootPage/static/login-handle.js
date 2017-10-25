@@ -6,22 +6,23 @@ function tentarLogin(){
                     var auths = Object.keys(data)
                     if(auths.length == 1){
                         var resultadoObj = data;
+                        var URLe;
                         if(resultadoObj.tabela == "aluno"){
-                            URL = "aluno-principal.html";
+                            URLe = "aluno-principal.html";
                         }else if(resultadoObj.tabela == "professor"){
-                            URL = "professor-principal.html";
+                            URLe = "professor-principal.html";
                         }else if(resultadoObj.tabela == "coordenacao"){
-                            URL = "coordenador-principal.html";
+                            URLe = "coordenador-principal.html";
                         }else if(resultadoObj.tabela == "dacc"){
-                            URL = "diretorio-principal.html";
+                            URLe = "diretorio-principal.html";
                         }
                     }else{
                         var authjson = encodeURIComponent(
                                        $.base64.encode(
                                        JSON.stringify(auths)));
-                        URL = "desambiguacao.html?auths=" + authjson;
+                        URLe = "desambiguacao.html?auths=" + authjson;
                     }
-                    window.location.href = URL;
+                    window.location.href = URLe;
                }).fail(function(jqobj, status, error){
                     if(jqobj.status == 400){
                         $("#erro-senha").slideDown(250);

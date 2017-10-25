@@ -178,6 +178,17 @@ body {
     cursor:default;
 }
 
+.menu-nominho {
+    background-color:#ffffff;
+    overflow:hidden;
+    padding:4px 8px 4px 8px;
+    border-color:#e8e8e8;
+    border-width:0 0 1px 0 !important;
+    width:100%;
+    text-align:right;
+    font-size:11pt;
+}
+
 .menu-elemento:hover {
     background-color:#fffee8;
 }
