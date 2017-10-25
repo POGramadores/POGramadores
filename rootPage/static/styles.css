@@ -180,7 +180,10 @@ body {
     position:absolute;
     left:27px;
     top:8px;
-    width:100%;
+    width:67%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .data-listagem {
