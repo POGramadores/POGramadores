@@ -16,8 +16,11 @@ function tentarLogin(){
                             URL = "membro-dacc-principal.html";
                         }
                     }else{
-                        $bataters_auths = auths;
-                        URL = "desambiguacao.html";
+                        var authjson = encodeURIComponent(
+                                       new Buffer(
+                                       JSON.stringify(auths)
+                                       ).toString("base64");
+                        URL = "desambiguacao.html?auths=" + authjson;
                     }
                     window.location.href = URL;
                }).fail(function(jqobj, status, error){
@@ -49,8 +52,20 @@ function enviarCadastro(){
     }
 }
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 function desambigua(tipo){
-    var auths = $bataters_auths;
+    var auths = JSON.parse(
+                btoa(
+                getParameterByName("auths")));
     var auth_selecionado = auths[tipo];
     var URL;
     document.cookie = "auth=" + auth_selecionado;
@@ -67,7 +82,9 @@ function desambigua(tipo){
 }
 
 function mostrarBotoes(){
-    var auths = $bataters_auths;
+    var auths = JSON.parse(
+                btoa(
+                getParameterByName("auths")));
     Object.keys($("form")).forEach(
         function(auth){
             $("#" + auth).display = inline;
