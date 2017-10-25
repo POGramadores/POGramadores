@@ -30,9 +30,9 @@ var discriminacaoAcesso = function(req,res,next){
 }
 
 
-var estaNaTabela = (tabelas,substituicao,res) =>{
+var estaNaTabela = (tabelas,substituicao,res,aux) =>{
 	console.log('tabela atual');
-	if (tabelas.length==0) return (err) => {res.status(400); res.end();};
+	if (tabelas.length==0) return (err) => {if(aux.length==0) {res.status(400); res.end(); return;} res.status(200); res.send(aux); res.end()};
 	return (err) => {
 		console.log('cheguei aqui');
 		const select = "select email,hash_senha from "+tabelas[0]+"  where email='"+substituicao[0]+"' and hash_senha='"+substituicao[1]+"' ;";
@@ -41,16 +41,11 @@ var estaNaTabela = (tabelas,substituicao,res) =>{
 			(err, result) => {
 				console.log(result + ' ' + err);
 				if(!(err || result.rowCount == 0)){
-					res.cookie("auth", jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
-						'secret'));
-					res.send({"tabela": tabelas[0]});
-					res.end();
-
+					console.log(tabelas[0]);
+					aux[tabelas[0]] = {"auth": jwt.sign({usuario:substituicao[0],senha:substituicao[1],tabelas:tabelas[0]},
+					                                                'secret')}
 				}
-				else{
-					console.log('proxima tabela');
-					connection.connect(estaNaTabela(tabelas.slice(1),substituicao,res));
-				}
+					connection.connect(estaNaTabela(tabelas.slice(1),substituicao,res,aux));
 			});
 	}
 
@@ -71,8 +66,11 @@ var trataFormulario = function(req,res) {
 		res.end();
 		return;
 	}
-	connection.connect(estaNaTabela(tabelas,substituicao,res));
+	connection.connect(estaNaTabela(tabelas,substituicao,res,{}));
 	console.log(req.url);
+}
+
+var cadastre = function(req,res){
 }
 
 app.use(express.json());
@@ -80,6 +78,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.post('/login', trataFormulario);
+app.put('/cadastro', cadastre);
 app.use(discriminacaoAcesso);
 
 
