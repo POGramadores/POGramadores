@@ -16,6 +16,7 @@ function tentarLogin(){
     
     request.open(method, URL, async);
     request.send(dados);
+    alert(status);
     if(status == 200){
         var resultadoObj = JSON.parse(resultado);
         request = new XMLHttpRequest;
