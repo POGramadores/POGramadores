@@ -85,7 +85,7 @@ function desambigua(tipo){
 }
 
 function mostrarBotoes(){
-    var mapeamento = {"aluno":"aluno", "dacc":"membro_dacc", "coordenacao":"coordenador", "professor":"professor"};
+    var mapeamento = {"aluno":"aluno", "dacc":"membro_dacc", "coordenacao":"coordenacao", "professor":"professor"};
     var auths = JSON.parse(
                 $.base64.decode(
                 getParameterByName("auths")));
