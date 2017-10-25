@@ -251,4 +251,16 @@ body {
 
 .titulo-alterar-senha {
     padding-bottom: 30px;
+}
+
+.erro-box {
+    display:none;
+    border:1px solid;
+    border-color:#ffb5aa;
+    border-radius:5px;
+    padding:2px 16px 2px 16px;
+    background-color:#ffddcc;
+    color:#c66;
+    margin-bottom:12px;
+}
 

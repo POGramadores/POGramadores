@@ -10,6 +10,8 @@
     <link rel="stylesheet" 
           type="text/css" 
           href="styles.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
     <title>Login</title>
 </head>
 <body class="fundo">
@@ -17,8 +19,11 @@
         
             <div class="d-flex text-center centra">
                 <img src="assets/logoicon.png" class="logo-afasta" height=180px/>
+                <div class="erro-box" id="erro-senha">
+                    Usuário ou senha incorretos.
+                </div>
                 <script src="login-handle.js"></script>
-                <form name="login" onsubmit="tentarLogin()">
+                <form name="login" onsubmit="return tentarLogin()">
                     <div class="form-group">
                         <input type="text" class="form-control cadastroinput col-xs-6" name="usuario" placeholder="login">
                     </div>
