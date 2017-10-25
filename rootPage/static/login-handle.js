@@ -6,7 +6,7 @@ function tentarLogin(){
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
                     console.log(data, status);
-                    if(status == 200){
+                    if(status == "success"){
                         var resultadoObj = JSON.parse(data);
                         if(resultadoObj.tabela == "aluno"){
                             URL = "aluno-principal.html";
@@ -16,7 +16,7 @@ function tentarLogin(){
                             URL = "coordenador-principal.html";
                         }
                         window.location.href = URL;
-                    }else if(status == 400){
+                    }else{
                         $("#erro-senha").slideDown(250);
                         setTimeout(function () {
                             $("#erro-senha").slideUp(500);
