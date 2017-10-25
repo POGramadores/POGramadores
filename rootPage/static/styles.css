@@ -30,7 +30,6 @@
 .cadastroinput {
     text-align:center;
     width:600px;
-    
 }
 
 .btn {
@@ -44,8 +43,11 @@
 }
 
 .topbar-bg {
-    background-color:#e4e4e4;
-    margin-bottom:16px
+    background-color:#f5f5f5;
+    margin-bottom:16px;
+    border-style:solid;
+    border-width:0 0 2px 0;
+    border-color:#e8e8e8;
 }
 
 .topbar {
@@ -92,10 +94,43 @@
 }
 
 .elemento-listagem {
-    margin-top:2px
+    position:relative;
+    margin-top:2px;
+    background-color:#fff;
+    width:90%;
+    padding-right:32px;
+    padding-bottom:44px;
 }
 
 .titulo-listagem {
     position:absolute;
-    left:
+    left:48px;
+    top:8px;
+    width:100%;
+}
+
+.data-listagem {
+    position:absolute;
+    right:24px;
+    top:8px;
+    font-weight:bold
+}
+
+.icone-status-listagem {
+    position:absolute
+    left:12px
+    top:12px
+}
+
+.conteudo-listagem {
+    position:relative;
+    left:48px;
+    top:34px;
+    color:#a0a0a0;
+    font-style:italic;
+    font-size:11pt;
+    width:95%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
