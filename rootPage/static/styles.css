@@ -27,19 +27,20 @@
     right:8px;
 }
 
-.logininput {
+.cadastroinput {
     text-align:center;
-    width:100%;
-}
-
-.fundo {
-    background-color:#f5f5f5;
+    width:600px;
+    
 }
 
 .btn {
     background-color:#ffbb52;
     font-weight:bold;
     color:#ffffff;
+}
+
+.fundo {
+    background-color:#f5f5f5;
 }
 
 .topbar-bg {

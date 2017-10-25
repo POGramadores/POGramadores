@@ -1,6 +1,8 @@
+\c agoravai;
 DROP TABLE aluno CASCADE;
-DROP TABLE professor CASCADE;
 DROP TABLE professores CASCADE;
+DROP TABLE professor CASCADE;
+DROP TABLE conversa CASCADE;
 DROP TABLE mensagem CASCADE;
 DROP TABLE envia CASCADE;
 DROP TABLE sudo_coordenacao CASCADE;
