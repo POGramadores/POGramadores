@@ -265,6 +265,6 @@ body {
 }
 
 .tipo {
-    visibility: hidden;
+    display:none;
     margin-top: 20px;
 }

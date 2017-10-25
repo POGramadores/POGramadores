@@ -67,10 +67,10 @@ function desambigua(tipo){
 }
 
 function mostrarBotoes(){
-    var auths = global.auths;
+    var auths = $bataters_auths;
     Object.keys($("form")).forEach(
         function(auth){
-            $("#" + auth).visibility = visible;
+            $("#" + auth).display = inline;
         }
     );
 }
