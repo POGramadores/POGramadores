@@ -12,10 +12,6 @@ var valida = function(){
                 alert(dados);
     }
     
-    
-    
-    
-    
     {usuario:user,senha:senha}).done(autenticacao => {alert(autenticacao)}).fail(() => {alert('ERROR');});
     
 }
