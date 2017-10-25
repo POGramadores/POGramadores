@@ -6,7 +6,7 @@ function tentarLogin(){
                     console.log(data);
                     var auths = Object.keys(data)
                     if(auths.length == 1){
-                        var resultadoObj;
+                        var resultadoObj = new Object;
                         resultadoObj.tabela = auths[0];
                         var URLe;
                         if(resultadoObj.tabela == "aluno"){
