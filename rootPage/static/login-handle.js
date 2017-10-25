@@ -10,10 +10,10 @@ function tentarLogin(){
                             URL = "aluno-principal.html";
                         }else if(resultadoObj.tabela == "professor"){
                             URL = "professor-principal.html";
-                        }else if(resultadoObj.tabela == "coordenador"){
+                        }else if(resultadoObj.tabela == "coordenacao"){
                             URL = "coordenador-principal.html";
-                        }else if(resultadoObj.tabela == "membro-dacc"){
-                            URL = "membro-dacc-principal.html";
+                        }else if(resultadoObj.tabela == "dacc"){
+                            URL = "diretorio-principal.html";
                         }
                     }else{
                         var authjson = encodeURIComponent(
@@ -74,8 +74,8 @@ function desambigua(tipo){
         URL = "professor-principal.html";
     }else if(tipo == "coordenador"){
         URL = "coordenador-principal.html";
-    }else if(tipo == "membro-dacc"){
-        URL = "membro-dacc-principal.html";
+    }else if(tipo == "membro_dacc"){
+        URL = "diretorio-principal.html";
     }
     window.location.href = URL;
 }
