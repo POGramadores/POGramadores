@@ -17,8 +17,8 @@ function tentarLogin(){
                     }
                     window.location.href = URL;
                }).fail(function(jqobj, status, error){
-                    console.log("DEL RUIM");
-                    if(jqobj.statusCode == 400){
+                    console.log("DEL RUIM", jqobj.status);
+                    if(jqobj.status == 400){
                         $("#erro-senha").slideDown(250);
                         setTimeout(function () {
                             $("#erro-senha").slideUp(500);
