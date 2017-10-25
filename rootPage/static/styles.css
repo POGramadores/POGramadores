@@ -1,5 +1,6 @@
 body {
     color:#404041;
+    font-family: "Quicksand", sans-serif;
 }
 
 .titulo {
@@ -27,6 +28,15 @@ body {
 .centra {
     display:flex;
     height:80vh;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    margin:auto;
+}
+
+.centramais {
+    display:flex;
+    height:90vh;
     align-items:center;
     justify-content:center;
     flex-direction:column;
