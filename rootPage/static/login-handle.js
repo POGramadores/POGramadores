@@ -19,7 +19,7 @@ function tentarLogin(){
                         var authjson = encodeURIComponent(
                                        new Buffer(
                                        JSON.stringify(auths)
-                                       ).toString("base64");
+                                       ).toString("base64"));
                         URL = "desambiguacao.html?auths=" + authjson;
                     }
                     window.location.href = URL;
