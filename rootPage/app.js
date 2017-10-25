@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const secret = 'secret';
 const Pool = require('pg-pool');
+const cookieParser = require('cookie-parser');
+
 
 const app = express();
 
@@ -77,14 +79,23 @@ var cadastre = function(req,res){
 
 
 var mensagem = function(req,res){
-	var auth = req.body.auth;
-	if(Object.keys(auth).length !== 1){
+	var auth = req.cookies['auth'];
+	console.log(auth);
+	if(typeof (auth) === 'undefined')
+	{
 		res.redirect('/login.html');
+		return;
+	}
+	if(Object.keys(auth).length !== 1){
+		res.redirect('/desambiguacao.html');
+	}
+	else{
+
 	}
 }
 
 
-
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
