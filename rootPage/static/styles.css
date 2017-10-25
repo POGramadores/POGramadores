@@ -16,6 +16,10 @@ body {
     margin-bottom:24px;
 }
 
+.pad-esq {
+    padding-left:40px;
+}
+
 .centra {
     display:flex;
     height:80vh;
@@ -128,13 +132,18 @@ body {
 .outliner {
     display:flex;
     flex-direction:column;
+    padding:0 !important;
 }
 
 .categoria-outliner {
     margin-bottom:2px;
     padding:8px;
-    width:90%;
+    width:96%;
     background-color:#ffffff;
+}
+
+.categoria-outliner:hover {
+    background-color:#fffee8;
 }
 
 .botao-escrever {
@@ -156,6 +165,10 @@ body {
     flex-direction:column;
 }
 
+.sem-pad {
+    padding:0 !important;
+}
+
 .listagem-na-divisoria {
     flex-grow:2;
 }
@@ -171,6 +184,10 @@ body {
     padding-right:32px;
     padding-bottom:44px;
     padding-left:11px;
+}
+
+.width-96 {
+    width:96% !important;
 }
 
 .elemento-listagem:hover {
