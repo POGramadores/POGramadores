@@ -17,7 +17,8 @@
         
             <div class="d-flex text-center centra">
                 <img src="assets/logoicon.png" class="logo-afasta" height=180px/>
-                <form action="/login" method="post">
+                <script src="login-handle.js"></script>
+                <form name="login" onsubmit="tentarLogin()">
                     <div class="form-group">
                         <input type="text" class="form-control cadastroinput col-xs-6" name="usuario" placeholder="login">
                     </div>
