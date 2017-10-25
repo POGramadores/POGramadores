@@ -56,7 +56,7 @@ body {
 }
 
 .btn-anim-light:hover {
-    background-color:#ffcf73;
+    background-color:#ffcf73 !important;
 }
 
 .btn-anim-arrow {
