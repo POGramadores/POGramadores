@@ -13,10 +13,25 @@
     <title>UFFeedback</title>
 </head>
 <body class="fundo">
+<div class="topbar-bg">
+    <div class="topbar container" id="topo">
+        <div class="tbelement">
+            <img src="assets/logoicon.png" height=48px width=48px/>
+        </div>
+        <div class="topbar-direita">
+            <div class="saudacao">
+                Olá, Sagiri Izumi
+            </div>
+            <div class="tbelement">
+                <img src="assets/gear.png" height=32px width=32px/>
+            </div>
+        </div>        
+    </div>
+</div>
     <div class="my-auto align-center container d-flex centracont">
         <div class="row">
             <div class="d-flex text-center centra">
-                <img src="assets/logoicon.png" class="logo-afasta" height=180px/>
+		<h1 class="titulo-alterar-senha"> Alteração de Senha </h1>
                 <form action="/redefinir-senha" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control cadastroinput" name="senha_atual" placeholder="senha atual" maxlength="">

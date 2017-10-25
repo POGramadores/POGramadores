@@ -232,8 +232,8 @@ body {
 
 .icone-status-listagem {
     position:absolute;
-    left:-32px;
-    top:21px;
+    left:-16px;
+    top:14px;
 }
 
 .conteudo-listagem {
@@ -248,3 +248,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.titulo-alterar-senha {
+    padding-bottom: 30px;
+
