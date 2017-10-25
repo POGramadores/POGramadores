@@ -3,9 +3,10 @@ function tentarLogin(){
     try{
         $.post("/login", $("#login-form").serialize(),
                function(data, status){
-                    var auths = Object.keys(data)
+                    var auths = Object.keys(JSON.parse(data))
                     if(auths.length == 1){
-                        var resultadoObj = data;
+                        var resultadoObj;
+                        resultadoObj.tabela = auths[0];
                         var URLe;
                         if(resultadoObj.tabela == "aluno"){
                             URLe = "aluno-principal.html";
