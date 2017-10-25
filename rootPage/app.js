@@ -32,7 +32,9 @@ var discriminacaoAcesso = function(req,res,next){
 
 var estaNaTabela = (tabelas,substituicao,res,aux) =>{
 	console.log('tabela atual');
-	if (tabelas.length==0) return (err) => {if(aux.length==0) {res.status(400); res.end(); return;} res.status(200); res.send(aux); res.end()};
+	if (tabelas.length==0) return (err) => {if(aux.length==0) {res.status(400); res.end(); return;} 
+		console.log(aux); res.header({"Content-type": "text/json"})
+		res.status(200); res.send(aux); res.end()};
 	return (err) => {
 		console.log('cheguei aqui');
 		const select = "select email,hash_senha from "+tabelas[0]+"  where email='"+substituicao[0]+"' and hash_senha='"+substituicao[1]+"' ;";
