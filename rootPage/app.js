@@ -77,6 +77,13 @@ var trataFormulario = function(req,res) {
 var cadastre = function(req,res){
 }
 
+var limpa = function(auth){
+	aux={};
+	for (var k in auth){
+		if(k!='iat') aux[k]=auth[k]
+	}
+	return aux;
+}
 
 var mensagem = function(req,res){
 	var auth = req.cookies['auth'];
@@ -90,6 +97,28 @@ var mensagem = function(req,res){
 		res.redirect('/desambiguacao.html');
 	}
 	else{
+		var count = req.body.count;
+		var offset = req.body.offset;
+		var auth = jwt.verify(auth,'secret');
+		auth=limpa(auth);
+		connection.connect( err => {
+			const select = "select * from conversa NATURAL JOIN aluno where nome='"  + auth['usuario']+
+				"' order by data_inicio limit " + count + " offset " + offset;
+
+				
+		  
+		
+		
+		
+		connection.query(select,
+			(err, result) => {
+				if(!err){
+					res.send(JSON.stringify(result));
+					res.end();
+				}
+				res.end();
+			});
+	});
 
 	}
 }
