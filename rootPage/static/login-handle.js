@@ -8,7 +8,7 @@ function tentarLogin(){
     var URL = "/login";
     var dados = "usuario=" + login + "&senha=" + senha;
     var async = false;
-    var request = new XMLHttpRequest;
+    var request = new XMLHttpRequest();
     request.onload = function () {
         var status = request.status;
         var resultado = request.responseText;
