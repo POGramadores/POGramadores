@@ -117,6 +117,69 @@ body {
     border-style:solid;
     border-width:0 0 2px 0;
     border-color:#e8e8e8;
+    width:100%;
+    position:fixed;
+    overflow:hidden;
+    z-index:5;
+}
+
+.escondidinho {
+    visibility:hidden;
+    height:64px;
+}
+
+.wd100 {
+    width:100%
+}
+
+.menu-posicionador {
+    position:fixed;
+    top:64px;
+    width:100%;
+}
+
+.menu-encapsulador {
+    display:none;
+    border-color:#c0c0c0;
+    border-width:1px !important;
+    overflow:hidden;
+    top:65px;
+    right:64px;
+    z-index:6;
+    position:fixed
+}
+
+.anolink {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.anolink:hover {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.menu-engrenagem {
+    display:flex;
+    flex-direction:column;
+}
+
+.menu-elemento {
+    background-color:#ffffff;
+    overflow:hidden;
+    padding:8px 8px 8px 8px;
+    border-color:#e8e8e8;
+    border-width:0 0 1px 0 !important;
+    width:100%;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+    cursor:default;
+}
+
+.menu-elemento:hover {
+    background-color:#fffee8;
 }
 
 .topbar {

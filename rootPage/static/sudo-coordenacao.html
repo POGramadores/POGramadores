@@ -13,20 +13,34 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" 
           rel="stylesheet">
     <title>UFFeedback</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="menusu.js"></script>
 </head>
 <body class="fundo">
 <div class="topbar-bg">
     <div class="topbar container" id="topo">
-        <div class="tbelement">
-            <img src="assets/logoicon.png" height=48px width=48px/>
+    	<div class="topbar-direita">
+            <div class="tblogo">
+                <img src="assets/logoicon.png" height=48px width=48px/>
+            </div>            
+            <div class="tbnominho">
+                <img src="assets/nome1024.png" width=104px/>
+            </div>    
         </div>
         <div class="topbar-direita">
             <div class="saudacao">
                 Olá, Sagiri Izumi
             </div>
             <div class="tbelement">
-                <img src="assets/gear.png" height=32px width=32px/>
+                <img src="assets/gear.png" height=32px width=32px onclick="toggleMenu()"/>
             </div>
         </div>        
     </div>
 </div>
+<div id="menu_encap" class="menu-encapsulador">
+    <div class="menu-engrenagem">
+        <a class="anolink" href="alteracao_senha.html"><div class="menu-elemento">Alterar senha</div></a>
+        <a class="anolink" href="login.html"><div class="menu-elemento">Sair</div></a>
+    </div>
+</div>
+<div class="escondidinho"></div>

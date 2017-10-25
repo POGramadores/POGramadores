@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" 
           rel="stylesheet">
     <title>UFFeedback</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="menusu.js"></script>
 </head>
 <body class="fundo">
 <div class="topbar-bg">
@@ -30,11 +32,18 @@
                 Olá, Sagiri Izumi
             </div>
             <div class="tbelement">
-                <img src="assets/gear.png" height=32px width=32px/>
+                <img src="assets/gear.png" height=32px width=32px onclick="toggleMenu()"/>
             </div>
         </div>        
     </div>
 </div>
+<div id="menu_encap" class="menu-encapsulador">
+    <div class="menu-engrenagem">
+        <a class="anolink" href="alteracao_senha.html"><div class="menu-elemento">Alterar senha</div></a>
+        <a class="anolink" href="login.html"><div class="menu-elemento">Sair</div></a>
+    </div>
+</div>
+<div class="escondidinho"></div>
 <div class="container pad-esq">
     <div class="row">
         <div class="outliner col-lg-3 col-md-4">
