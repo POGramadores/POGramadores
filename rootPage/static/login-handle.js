@@ -86,6 +86,7 @@ function mostrarBotoes(){
                 getParameterByName("auths")));
     Object.keys($("form")).forEach(
         function(auth){
+            console.log(auth)
             $("#" + auth).show(200);
         }
     );
