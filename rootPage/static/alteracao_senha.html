@@ -10,7 +10,7 @@
     <link rel="stylesheet" 
           type="text/css" 
           href="styles.css"/>
-    <title>Cadastro Aluno</title>
+    <title>[nome aqui]</title>
 </head>
 <body class="fundo">
     <div class="my-auto align-center container d-flex centracont">
@@ -19,28 +19,18 @@
                 <img src="assets/logoicon.png" height=180px/><br>
                 <form action="/cadastro" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control cadastroinput" name="nome" placeholder="nome" maxlength="">
+                        <input type="text" class="form-control cadastroinput" name="senha_atual" placeholder="senha atual" maxlength="">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control cadastroinput" name="email" placeholder="e-mail" maxlength="">
+                        <input type="password" class="form-control cadastroinput" name="nova_senha" placeholder="nova senha" maxlength="">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control cadastroinput" name="senha" placeholder="senha" maxlength="">
+                        <input type="password" class="form-control cadastroinput" name="confirma__nova_senha" placeholder="confirmar nova senha" maxlength="">
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control cadastroinput" name="confirma_senha" placeholder="cofirmar senha" maxlength="">
-                    </div>
-                        <input type="submit" class="btn btn-cadastrar" value="Cadastrar">
+                        <input type="submit" class="btn btn-cadastrar senha" value="Cadastrar senha">
                 </form>
             </div>
         </div>
     </div>
-    
-    <div class="canto">
-        <form method="get" action="cadastro.html">
-            <button class="btn float-right canto" type=submit>Entrar</button>
-        </form>
-    </div>
-
 </body>
 </html>
